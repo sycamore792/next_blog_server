@@ -12,4 +12,6 @@ import org.springframework.validation.annotation.Validated;
  */
 public interface IUserLoginService {
     SingleResponse<UserLoginByAccountCO> userLoginByAccount( UserLoginByAccountCmd cmd);
+
+    SingleResponse trySendSms(String phoneNum);
 }

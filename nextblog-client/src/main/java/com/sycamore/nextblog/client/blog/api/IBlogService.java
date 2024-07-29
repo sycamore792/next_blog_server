@@ -13,7 +13,7 @@ import com.sycamore.nextblog.components.cola.dto.SingleResponse;
  * @author 桑运昌
  */
 public interface IBlogService {
-    PageResponse<BlogPageCO> listByParam(BlogPageQry param);
+    PageResponse<BlogPageCO> listRecommend(BlogPageQry param);
 
     SingleResponse<BlogDetailCO> queryBlogDetailById(String blogId);
 

@@ -26,4 +26,13 @@ public class MybatisPlusConfig {
             configuration.addInterceptor(new SqlInterceptor());
         };
     }
+
+
+    /**
+     * 元数据填充
+     */
+    @Bean
+    public DefaultMetaObjectHandler defaultMetaObjectHandler() {
+        return new DefaultMetaObjectHandler();
+    }
 }

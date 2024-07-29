@@ -7,7 +7,7 @@ import com.sycamore.nextblog.client.blog.dto.req.BlogCreateCmd;
 import com.sycamore.nextblog.client.blog.dto.resp.BlogDetailCO;
 import com.sycamore.nextblog.client.blog.dto.resp.BlogPageCO;
 import com.sycamore.nextblog.client.blog.dto.req.BlogPageQry;
-import com.sycamore.nextblog.app.blog.executor.query.BlogPageQryExe;
+import com.sycamore.nextblog.app.blog.executor.query.BlogRecommendPageQryExe;
 import com.sycamore.nextblog.components.cola.dto.PageResponse;
 import com.sycamore.nextblog.components.cola.dto.SingleResponse;
 import com.sycamore.nextblog.infrastructure.UserContext;
@@ -27,12 +27,12 @@ import java.util.Objects;
 @Slf4j
 @RequiredArgsConstructor
 public class BlogServiceImpl implements IBlogService {
-    private final BlogPageQryExe blogPageQryExe;
+    private final BlogRecommendPageQryExe blogRecommendPageQryExe;
     private final BlogDetailQryExe blogDetailQryExe;
     private final BlogPublishCmdExe blogPublishCmdExe;
     @Override
-    public PageResponse<BlogPageCO> listByParam(BlogPageQry param) {
-        return blogPageQryExe.execute(param);
+    public PageResponse<BlogPageCO> listRecommend(BlogPageQry param) {
+        return blogRecommendPageQryExe.execute(param);
     }
 
     @Override

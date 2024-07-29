@@ -21,6 +21,15 @@
             <groupId>com.sycamore.nextblog</groupId>
             <artifactId>adapter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.projectreactor.netty</groupId>
+            <artifactId>reactor-netty-http</artifactId>
+        </dependency>
+
     </dependencies>
     <build>
 <!--        <finalName>nextblog-${maven.build.timestamp}</finalName>-->

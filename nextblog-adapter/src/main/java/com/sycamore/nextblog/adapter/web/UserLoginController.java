@@ -9,9 +9,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @author: Sycamore
@@ -29,5 +27,11 @@ public class UserLoginController {
     @Operation(summary = "账号密码登陆")
     public SingleResponse<UserLoginByAccountCO> userLoginByAccount (@Validated @RequestBody UserLoginByAccountCmd cmd) {
         return userLoginService.userLoginByAccount(cmd);
+    }
+
+    @GetMapping("v1/user_login_service/sms")
+    @Operation(summary = "发送短信")
+    public SingleResponse sms (@RequestParam("phoneNum") String phoneNum) {
+        return userLoginService.trySendSms(phoneNum);
     }
 }

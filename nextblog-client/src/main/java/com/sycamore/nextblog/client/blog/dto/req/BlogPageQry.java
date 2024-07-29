@@ -10,7 +10,6 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class BlogPageQry extends PageQuery {
-//    @Parameter(description = "姓名")
-//    private String name;
+    private String userId;
 
 }
